@@ -42,7 +42,7 @@ class PillowWrapper(object):
         render = ImageTk.PhotoImage(self.image)
         return render
 
-    def thumbNail(self, ):
+    def thumbNail(self):
         """
         Resize the image.
 
