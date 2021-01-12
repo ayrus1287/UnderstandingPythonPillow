@@ -10,3 +10,4 @@ https://pypi.python.org/packages/3.4/P/Pillow/Pillow-2.5.3.win-amd64-py3.4.exe#m
 Important Links:
 https://pypi.org/project/Pillow/
 https://auth0.com/blog/image-processing-in-python-with-pillow/#Image-enhancements
+https://pillow.readthedocs.io/en/stable/
