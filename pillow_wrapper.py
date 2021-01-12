@@ -14,8 +14,7 @@ class PillowWrapper(object):
         """
         self.path = path
         self.image = None
-        self.originalSize = None
-        self.originalMode = None
+        self.imageOriginal = None
         self.baseWidth = None
 
     def openImage(self, path):
@@ -31,32 +30,31 @@ class PillowWrapper(object):
         render: PIL.ImageTk.PhotoImage
         """
         self.path = path
-        self.image = Image.open(self.path)
-
-        self.originalSize = self.image.size
-        self.originalMode = self.image.mode
+        self.image = self.imageOriginal = Image.open(self.path)
         self.baseWidth = self.image.width
 
         render = ImageTk.PhotoImage(self.image)
         return render
 
-    def reSizeImage(self, size=None):
+    def reset(self):
+        self.image = self.imageOriginal
+
+        render = ImageTk.PhotoImage(self.image)
+        return render
+
+    def thumbNail(self,):
         """
         Resize the image.
 
         Parameters:
         -----------
-        size: tuple of width and height
 
         Returns:
         --------
         render: PIL.ImageTk.PhotoImage
         """
-        if size:
-            self.image = self.image.resize(size)
-        else:
-            # If no size is given, then resize it to the original size.
-            self.image = self.image.resize(self.originalSize)
+        # Size tuple(width, height)
+        self.image = self.image.resize((200, 200))
 
         render = ImageTk.PhotoImage(self.image)
         return render

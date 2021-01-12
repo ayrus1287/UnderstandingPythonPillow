@@ -17,7 +17,7 @@ class Window(Frame):
         # Buttons
         uploadButton = Button(root, text='Upload', command=self.uploadBtnAction)
         exitButton = Button(self, text="Exit", command=self.clickExitButton)
-        thumbnailButton = Button(self, text="Passport", command=self.thumbnailBtnAction)
+        thumbnailButton = Button(self, text="Thumb", command=self.thumbnailBtnAction)
         originalButton = Button(self, text="Original", command=self.originalSizeBtnAction)
         rotateRightButton = Button(self, text="Rotate -->", command=self.rotateRightBtnAction)
         rotateLeftButton = Button(self, text="Rotate <--", command=self.rotateLeftBtnAction)
@@ -59,11 +59,11 @@ class Window(Frame):
         self._renderImage(render)
 
     def thumbnailBtnAction(self, event=None):
-        render = self.pillowWrapper.reSizeImage((200, 200))
+        render = self.pillowWrapper.thumbNail()
         self._renderImage(render)
 
     def originalSizeBtnAction(self, event=None):
-        render = self.pillowWrapper.reSizeImage()
+        render = self.pillowWrapper.reset()
         self._renderImage(render)
 
     def rotateRightBtnAction(self, event=None):
