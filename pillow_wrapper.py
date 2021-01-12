@@ -42,7 +42,7 @@ class PillowWrapper(object):
         render = ImageTk.PhotoImage(self.image)
         return render
 
-    def thumbNail(self,):
+    def thumbNail(self, ):
         """
         Resize the image.
 
@@ -140,9 +140,9 @@ class PillowWrapper(object):
         path = 'C:\\Users\\admin\\Desktop\\modified.jpg'
         self.image.save(path)
 
-#---------------------------------------------------------------------------------------------------------------------
-#Some Cool things you can do
-#---------------------------------------------------------------------------------------------------------------------
+    # ------------------------------------------------------------------------------------------------------------------
+    # Some Cool things you can do
+    # ------------------------------------------------------------------------------------------------------------------
 
     def zoomInImage(self):
         """
@@ -301,4 +301,3 @@ class PillowWrapper(object):
 
         render = ImageTk.PhotoImage(im_output)
         return render
-
